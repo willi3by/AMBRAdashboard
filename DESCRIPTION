@@ -1,0 +1,21 @@
+Package: AMBRAdashboard
+Title: Shiny App for AMBRA Analytics
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Brady",
+           family = "Williamson",
+           role = c("aut", "cre"),
+           email = "willi3by@ucmail.uc.edu")
+Description: This package integrates functionality from the ambraSDKr package to
+    create a dashboard for study analytics.
+License: GPL-3
+Imports: 
+    config,
+    golem,
+    shiny,
+    tidymodules,
+    ambraSDKr,
+    ggplot2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
