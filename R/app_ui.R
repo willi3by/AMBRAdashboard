@@ -10,7 +10,20 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # List the first level UI elements here 
     fluidPage(
-      h1("AMBRAdashboard")
+      titlePanel("Test Study"),
+      
+      sidebarLayout(
+        
+        sidebarPanel(
+          
+          selectInput("var_choice", "Choose Varialbe:", list("var1", "var2", "var3"))
+        ),
+        mainPanel(
+          tabsetPanel(type="tabs",
+                      tabPanel("Test_panel", mod_first_tab_ui("first_tab_ui_1"))
+          )
+        )
+      )
     )
   )
 }
