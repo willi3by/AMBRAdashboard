@@ -22,27 +22,29 @@ mod_first_tab_ui <- function(id){
       class = "test-button",
       align = "center",
       actionButton(
-        ns("test"),
-        "Test the app"
+        ns("plotVar"),
+        "Plot"
       ),
       uiOutput(ns("test_out"))
     )
   )
 }
-    
+
+# TODO Add reactivity.
+
 #' first_tab Server Function
 #'
 #' @noRd 
 mod_first_tab_server <- function(input, output, session, r){
   ns <- session$ns
-  observeEvent( input$test, {
+  observeEvent( input$plotVar, {
     r$text <- shinipsum::random_text(
       nwords = 1000
     )
   })
   
   output$test_out <- renderUI({
-    req(input$test)
+    req(input$plotvar)
     tags$p(
       align = "center",
       sprintf(
